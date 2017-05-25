@@ -20,9 +20,20 @@ gulp.task('watch', function(){
 	watch('./app/assets/styles/**/*.css',function(){
 		gulp.start('cssInject');
 	});
+	
+	//Watch JavaScript file
+	watch('./app/assets/scripts/**/*.js', function(){
+		//start JS refresh
+		gulp.start('scriptsRefresh');
+	});
 });
 
 gulp.task('cssInject', ['styles'],function(){
 	return gulp.src('./app/assets/styles/styles.css')
 		.pipe(browserSync.stream());
+});
+
+//JavaScript refresh task
+gulp.task('scriptsRefresh', ['scripts'], function(){
+	browserSync.reload();
 });
