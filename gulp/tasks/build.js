@@ -44,6 +44,7 @@ gulp.task('optimizeImages',['deleteDistFolder'], function() {
 		}))
 		.pipe(gulp.dest("./docs/assets/images"));
 });
+
 gulp.task('useminTrigger', ['deleteDistFolder'], function() {
 	gulp.start("usemin");
 });
