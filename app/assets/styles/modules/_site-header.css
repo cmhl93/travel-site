@@ -19,7 +19,7 @@
 	}
 	
 	&__btn-container{
-		@mixin atMedium{
+		@mixin atMedium {
 			float: right;
 		}
 	}
